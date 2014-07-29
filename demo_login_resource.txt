@@ -1,0 +1,13 @@
+*** Valiables ***
+${LOGIN URL}    http://localhost:7272/html/
+
+*** Keywords ***
+ไปหน้าล็อกอิน
+	Open Browser    ${LOGIN URL}
+	
+กรอกข้อมูลเข้าสู่ระบบ
+	[Arguments]    ${username}    ${password}
+	Input Text    username_field    ${username} 
+	Input Text    password_field    ${password}
+	Click Button    login_button
+	

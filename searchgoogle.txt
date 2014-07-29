@@ -1,0 +1,13 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Valiables ***
+
+
+*** testcases ***
+Search Data From Google.com
+	Open Browser    http://www.google.com
+	Input Text    gbqfq    ega
+	Click Button    gbqfb
+	
+*** Keywords ***

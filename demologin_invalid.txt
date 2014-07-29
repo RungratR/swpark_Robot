@@ -1,0 +1,31 @@
+*** Settings ***
+Library    Selenium2Library
+Test Teardown    Close Browser
+Resource    demo_login_resource.txt
+
+*** Valiables ***
+
+
+*** testcases ***
+Invalid Login
+	[Template]    Validate login system
+		invalid    mode
+		demo    invalid
+		${EMPTY}    ${EMPTY}
+		invalid    invalid
+	
+*** Keywords ***
+Validate login system
+	[Arguments]    ${username}    ${password}
+	ไปหน้าล็อกอิน
+	กรอกข้อมูลเข้าสู่ระบบ    ${username}    ${password}
+	ล็อกอินไม่สำเร็จ
+		
+	
+ล็อกอินไม่สำเร็จ
+	Title Should Be    Error Page
+	Wait Until Page Contains    Error Page
+
+
+
+	
